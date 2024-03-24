@@ -8,7 +8,7 @@ const loadIcon = document.querySelector("#spinner");
 loadConfig();
 
 async function loadConfig() {
-    const response = await fetch('/config.json');
+    const response = await fetch('/configAPI.json');
     const data = await response.json();
     API_KEY = data.api_key;
     genAI = new GoogleGenerativeAI(API_KEY);
