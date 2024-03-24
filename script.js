@@ -37,15 +37,15 @@ async function animar() {
 
 function montarPrompt() {
     const name = document.getElementById("name").value;
-    const idade = document.getElementById("idade").value;
+    const dicas = document.getElementById("dicas").value;
     const objetivo = document.getElementById("objetivo").value;
     const estadoEmocional = document.getElementById("estadoEmocional").value;
     const areaInteresse = document.getElementById("areaInteresse").value;
 
     const prompt = `Escreva uma frase motivacional sobre ${areaInteresse}, seja carinhoso e motivador, demonstre empatia. 
                     leve em consideração estas informações: 
-                    Meu nome é ${name}, tenho ${idade} anos.
+                    Meu nome é ${name}.
                     Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.
-                    Me de duas dicas de como ${objetivo}`;
+                    Me de ${dicas} dicas de como ${objetivo}`;
     return prompt;                
 }
