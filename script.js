@@ -16,11 +16,16 @@ async function loadConfig() {
 }
   
 animarBtn.addEventListener("click", async (e) => {
-    resultadoText.innerHTML = "";
-    resultadoDiv.style.display = "block";
-    loadIcon.style.display = "block";
-    e.preventDefault();
-    animar();   
+    if (!checarCampos()) {
+        alert("Por favor, preencha todos os campos");
+    } else {
+        resultadoText.innerHTML = "";
+        resultadoDiv.style.display = "block";
+        loadIcon.style.display = "block";
+        e.preventDefault();
+        animar();
+    }
+   
 })
 
 async function animar() {
@@ -33,6 +38,14 @@ async function animar() {
 
     resultadoText.innerHTML = text;
     loadIcon.style.display = "none";
+    scrollToBottom();
+}
+
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth' // Para uma rolagem suave
+    });
 }
 
 function montarPrompt() {
@@ -48,4 +61,18 @@ function montarPrompt() {
                     Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.
                     Me de ${dicas} dicas de como ${objetivo}`;
     return prompt;                
+}
+
+function checarCampos() {
+    const name = document.getElementById("name").value;
+    const dicas = document.getElementById("dicas").value;
+    const objetivo = document.getElementById("objetivo").value;
+    const estadoEmocional = document.getElementById("estadoEmocional").value;
+    const areaInteresse = document.getElementById("areaInteresse").value;
+
+    if (name === "" || dicas === "" || objetivo === "" || estadoEmocional === "" || areaInteresse === "") {
+        return false;
+    } else {
+        return true;
+    }
 }

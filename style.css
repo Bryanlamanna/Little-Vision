@@ -16,6 +16,7 @@ h1 {
     justify-content: center;
     text-align: center;
     padding-top: 6em;
+    padding-bottom: 6em;
 }
 
 .form {
@@ -42,6 +43,7 @@ input {
     border-radius: 8px;
     outline: none;
     border: none;
+    max-width: 90%;
 }
 
 select {
@@ -56,7 +58,7 @@ select {
 input[type="number"] {
     
     margin: 0 auto;
-    max-width: 70px;
+    max-width: 50%;
 }
 
 #responseDiv {
