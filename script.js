@@ -12,6 +12,7 @@ async function loadConfig() {
     const data = await response.json();
     API_KEY = data.api_key;
     genAI = new GoogleGenerativeAI(API_KEY);
+    
 }
   
 animarBtn.addEventListener("click", async (e) => {
@@ -28,6 +29,7 @@ async function animar() {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
+    console.log(text);
 
     resultadoText.innerHTML = text;
     loadIcon.style.display = "none";
