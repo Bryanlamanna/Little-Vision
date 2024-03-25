@@ -8,11 +8,10 @@ const loadIcon = document.querySelector("#spinner");
 loadConfig();
 
 async function loadConfig() {
-    const response = await fetch('/configAPI.json');
+    const response = await fetch('https://api-keys-fb69e-default-rtdb.firebaseio.com/config.json');
     const data = await response.json();
     API_KEY = data.api_key;
     genAI = new GoogleGenerativeAI(API_KEY);
-    
 }
   
 animarBtn.addEventListener("click", async (e) => {
