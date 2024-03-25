@@ -50,7 +50,7 @@ input {
 select {
     padding: 5px;
     margin: 0 auto;
-    max-width: 150px;
+    max-width: 50%;
     border-radius: 8px;
     outline: none;
     border: none;
@@ -91,4 +91,22 @@ input[type="number"] {
     to {
         transform: rotate(360deg);
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    .form {
+        width: 90%;
+    }
+
+    select {
+        padding: 5px;
+        margin: 0 auto;
+        max-width: 90%;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+    }
+    
+
 }
