@@ -49,7 +49,6 @@ function scrollToBottom() {
 function montarPrompt() {
     const name = document.getElementById("name").value;
     const persona = document.getElementById("persona").value;
-    const dicas = document.getElementById("dicas").value;
     const objetivo = document.getElementById("objetivo").value;
     const estadoEmocional = document.getElementById("estadoEmocional").value;
     const areaInteresse = document.getElementById("areaInteresse").value;
@@ -57,8 +56,7 @@ function montarPrompt() {
     const prompt = `Escreva uma frase motivacional sobre ${areaInteresse}, fale como se voce fosse o ${persona}. 
                     leve em consideração estas informações: 
                     Meu nome é ${name}.
-                    Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.
-                    Me de ${dicas} dicas de como ${objetivo}`;
+                    Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.`;
     return prompt;         
 }
 
