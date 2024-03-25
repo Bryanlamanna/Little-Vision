@@ -52,12 +52,19 @@ function montarPrompt() {
     const objetivo = document.getElementById("objetivo").value;
     const estadoEmocional = document.getElementById("estadoEmocional").value;
     const areaInteresse = document.getElementById("areaInteresse").value;
+    let prompt
 
-    const prompt = `Escreva uma frase motivacional sobre ${areaInteresse}, fale como se voce fosse o ${persona}. 
+    if (persona === "Groot") {
+        prompt = 'o que o Groot diria?';
+    } else {
+        prompt = `Escreva uma frase motivacional sobre ${areaInteresse}, fale como se voce fosse o ${persona}. 
                     leve em consideração estas informações: 
                     Meu nome é ${name}.
                     Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.`;
-    return prompt;         
+    
+    }
+
+     return prompt;         
 }
 
 function checarCampos() {
