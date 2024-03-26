@@ -8,13 +8,18 @@ const loadIcon = document.querySelector("#spinner");
 const copyIcon = document.querySelector(".copyBtn");
 const shareBtn = document.querySelector(".shareBtn");
 const botoesResponse = document.querySelector(".responseBtn");
+const name = document.getElementById("name").value;
+const persona = document.getElementById("persona").value;
+const objetivo = document.getElementById("objetivo").value;
+const estadoEmocional = document.getElementById("estadoEmocional").value;
+const areaInteresse = document.getElementById("areaInteresse").value;
 loadConfig();
 
 shareBtn.addEventListener("click", (e) => {
     if (navigator.share) {
         navigator.share({
             title: 'Motivator',
-            text: `${resultadoText.innerHTML}`,
+            text: `Mensagem que recebi do ${persona} via LittleVision: ${resultadoText.innerHTML}`,
             url: 'https://littlevision.netlify.app'
         }).then(() => {
             console.log('Thanks for sharing!');
@@ -78,11 +83,7 @@ function scrollToBottom() {
 }
 
 function montarPrompt() {
-    const name = document.getElementById("name").value;
-    const persona = document.getElementById("persona").value;
-    const objetivo = document.getElementById("objetivo").value;
-    const estadoEmocional = document.getElementById("estadoEmocional").value;
-    const areaInteresse = document.getElementById("areaInteresse").value;
+    
     let prompt
 
     if (persona === "Groot") {
