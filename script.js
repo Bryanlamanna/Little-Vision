@@ -18,8 +18,8 @@ loadConfig();
 shareBtn.addEventListener("click", (e) => {
     if (navigator.share) {
         navigator.share({
-            title: 'Motivator',
-            text: `Mensagem que recebi do ${persona} via LittleVision: ${resultadoText.innerHTML}`,
+            title: 'Little Vision - Pega a visão!',
+            text: `Mensagem que recebi do ${persona} via LittleVision: \n "${resultadoText.innerHTML}"`,
             url: 'https://littlevision.netlify.app'
         }).then(() => {
             console.log('Thanks for sharing!');
