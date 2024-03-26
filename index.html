@@ -52,13 +52,20 @@
     <p id="responseDiv">
         <span id="responseText"></span>
         <i class="fa-solid fa-spinner" id="spinner"></i>
-        <i class="fa-regular fa-copy copyIcon"></i>
-
     </p>
+    <div class="responseBtn" style="display: flex; gap: 1em; display: none;">
+        <button class="btn btn-primary shareBtn mt-4">
+            <i class="fa-solid fa-share-nodes"></i>
+            Share
+        </button>
+        <button class="btn btn-primary copyBtn mt-4" id="copyBtn">
+            <i class="fa-regular fa-copy"></i>
+            Copiar
+        </button>
+    </div>
 
     </div>
     
-
     <script type="importmap">
         {
           "imports": {

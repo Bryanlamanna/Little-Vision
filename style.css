@@ -20,12 +20,12 @@ h2 {
     height: 100vh;
 }
 
-.animarBtn {
+.animarBtn, .copyBtn, .shareBtn {
     transition: .3s;
 
 }   
 
-.animarBtn:hover {
+.animarBtn:hover, .copyBtn:hover, .shareBtn:hover {
     transform: translate(-5px, -5px);    
     box-shadow: 5px 5px 0px #00000049;
     background-color: rgb(147, 221, 73);
@@ -42,7 +42,7 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 20%;
+    width: 20em;
     padding: 1em;
 }
 

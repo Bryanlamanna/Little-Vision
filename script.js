@@ -5,8 +5,27 @@ const animarBtn = document.querySelector(".animarBtn");
 const resultadoDiv = document.querySelector("#responseDiv");
 const resultadoText = document.querySelector("#responseText");
 const loadIcon = document.querySelector("#spinner");
-const copyIcon = document.querySelector(".copyIcon");
+const copyIcon = document.querySelector(".copyBtn");
+const shareBtn = document.querySelector(".shareBtn");
+const botoesResponse = document.querySelector(".responseBtn");
 loadConfig();
+
+shareBtn.addEventListener("click", (e) => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Motivator',
+            text: `${resultadoText.innerHTML}`,
+            url: 'https://littlevision.netlify.app'
+        }).then(() => {
+            console.log('Thanks for sharing!');
+        }).catch((error) => {
+            console.error('Error sharing:', error);
+        })
+    } else {
+        console.log('Sharing not supported');
+    }
+})
+
 
 copyIcon.addEventListener("click", (e) => {
     navigator.clipboard.writeText(resultadoText.innerHTML);
@@ -23,6 +42,7 @@ animarBtn.addEventListener("click", async (e) => {
     if (!checarCampos()) {
         alert("Por favor, preencha todos os campos");
     } else {
+        botoesResponse.style.display = "none";
         resultadoText.innerHTML = "";
         resultadoDiv.style.display = "block";
         loadIcon.style.display = "block";
@@ -41,7 +61,7 @@ async function animar() {
         const text = response.text();
         resultadoText.innerHTML = text;
         loadIcon.style.display = "none";
-        copyIcon.style.display = "block";
+        botoesResponse.style.display = "flex";
         scrollToBottom();
     } catch (error) {
         console.log(error);
