@@ -3,9 +3,11 @@ body {
     justify-content: center;
     background-color: #a1a1a1;
     font-family: Arial, sans-serif;
+
 }
 
-h1 {
+h2 {
+    font-size: 4em;
     text-align: center;
 }
 
@@ -15,8 +17,19 @@ h1 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 6em;
-    padding-bottom: 6em;
+    height: 100vh;
+}
+
+.animarBtn {
+    transition: .3s;
+
+}   
+
+.animarBtn:hover {
+    transform: translate(-5px, -5px);    
+    box-shadow: 5px 5px 0px #00000049;
+    background-color: rgb(147, 221, 73);
+    color: black;
 }
 
 .form {
@@ -29,7 +42,7 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
+    width: 20%;
     padding: 1em;
 }
 
@@ -40,17 +53,22 @@ button {
 
 input {
     text-align: center;
-    padding: 2px;
     border-radius: 8px;
     outline: none;
     border: none;
     max-width: 90%;
 }
 
+input[type="text"] {
+    padding: 3px;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
 select {
     padding: 5px;
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 80%;
     border-radius: 8px;
     outline: none;
     border: none;
@@ -59,12 +77,11 @@ select {
 input[type="number"] {
     
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 90%;
 }
 
 #responseDiv {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
     display: none;
     border-radius: 8px;
     padding: 10px;
@@ -77,9 +94,10 @@ input[type="number"] {
 
 
 
-#responseDiv i {
 
+#spinner {
     animation: spin 1s linear infinite;
+
 }
 
 @keyframes spin {
@@ -94,12 +112,27 @@ input[type="number"] {
 }
 
 .buttons {
+    display: none;
     visibility: hidden;
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: .5em;
 }
+
+.copyIcon{
+    display: none;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+    right: 1%;
+}
+
+
+.copyIcon:hover {
+    color: rgb(147, 221, 73);
+}
+
 
 .buttons button {
     width: 100px;
@@ -116,6 +149,10 @@ input[type="number"] {
         width: 90%;
     }
 
+    #name, #objetivo {
+        width: 90%;
+    }
+
     select {
         padding: 5px;
         margin: 0 auto;
@@ -123,6 +160,15 @@ input[type="number"] {
         border-radius: 8px;
         outline: none;
         border: none;
+    }
+
+    #responseDiv {            
+        max-width: 90%;
+    }
+
+    #estadoEmocional, #areaInteresse, #persona {
+    
+        padding: 3px;
     }
     
 

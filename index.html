@@ -6,35 +6,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <title>Se Anima!</title>
 </head>
 <body>
    
-    <div class="container">
+    <div class="container text-black">
        
 
     <form class="form" action="#">
-        <h2>Se abre ai!</h2>
+        <h2 style="font-size: 2em;">Se abre ai!</h2>
         <label for="name">Nome:</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" class="text-black" >
         <label for="objetivo">Objetivo:</label>
-        <input type="text" name="objetivo" id="objetivo" maxlength="20">
+        <input type="text" name="objetivo" id="objetivo" maxlength="20" class="text-black">
         <label for="areaInteresse">Area de interesse:</label>
-        <select name="areaInteresse" id="areaInteresse">
+        <select class="text-black" name="areaInteresse" id="areaInteresse">
             <option value="carreira">Carreira</option>
             <option value="relacionamento">Relacionamento</option>
             <option value="saude">Saúde</option>
             <option value="espiritualidade">Espiritualidade</option>
         </select>
         <label for="estadoEmocional">Estado Emocional:</label>
-        <select id="estadoEmocional" name="estadoEmocional">
+        <select class="text-black" id="estadoEmocional" name="estadoEmocional">
             <option value="feliz">Feliz</option>
             <option value="triste">Triste</option>
             <option value="ansioso">Ansioso</option>
             <option value="em um dia difícil">Em um dia difícil</option>
         </select>
         <label for="persona">Amigo:</label>
-        <select name="persona" id="persona">
+        <select class="text-black" name="persona" id="persona">
             <option value="Groot">Groot</option>
             <option value="Homem-Aranha">Homem Aranha</option>
             <option value="Malcom-X">Malcom X</option>
@@ -42,27 +44,16 @@
             <option value="Mestre-Yoda">Mestre Yoda</option>
             <option value="Gandhi">Mahatma Gandhi</option>
         </select>
-        <button class="btn btn-primary animarBtn">Habla!</button>
+        <button class="btn btn-primary animarBtn mt-4">Habla!</button>
     </form>
 
-    <div class="buttons">
-        <button class="btn btn-primary">
-            <img class="image" src="assets/5853bcc7ec0c270fc2f62de8.png" alt="spider man">
-        </button>
-        <button class="btn btn-primary">
-            <img class="image" src="assets/pngimg.com - yoda_PNG15.png" alt="spider man">
-        </button>
-        <button class="btn btn-primary">
-            <img class="image" src="assets/pngegg.png" alt="spider man">
-        </button>
-        <button class="btn btn-primary">
-            <img class="image" src="assets/5853bcc7ec0c270fc2f62de8.png" alt="spider man">
-        </button>
-    </div>
+   
 
     <p id="responseDiv">
         <span id="responseText"></span>
         <i class="fa-solid fa-spinner" id="spinner"></i>
+        <i class="fa-regular fa-copy copyIcon"></i>
+
     </p>
 
     </div>

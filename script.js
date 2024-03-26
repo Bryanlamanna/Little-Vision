@@ -5,7 +5,12 @@ const animarBtn = document.querySelector(".animarBtn");
 const resultadoDiv = document.querySelector("#responseDiv");
 const resultadoText = document.querySelector("#responseText");
 const loadIcon = document.querySelector("#spinner");
+const copyIcon = document.querySelector(".copyIcon");
 loadConfig();
+
+copyIcon.addEventListener("click", (e) => {
+    navigator.clipboard.writeText(resultadoText.innerHTML);
+})
 
 async function loadConfig() {
     const response = await fetch('https://api-keys-fb69e-default-rtdb.firebaseio.com/config.json');
@@ -28,15 +33,21 @@ animarBtn.addEventListener("click", async (e) => {
 })
 
 async function animar() {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-    const prompt = montarPrompt();
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-
-    resultadoText.innerHTML = text;
-    loadIcon.style.display = "none";
-    scrollToBottom();
+    try {
+        const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+        const prompt = montarPrompt();
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        resultadoText.innerHTML = text;
+        loadIcon.style.display = "none";
+        copyIcon.style.display = "block";
+        scrollToBottom();
+    } catch (error) {
+        console.log(error);
+        resultadoText.innerHTML = "Algo deu errado. Tente outro objetivo!";
+        loadIcon.style.display = "none";
+    }
 }
 
 function scrollToBottom() {
@@ -79,3 +90,4 @@ function checarCampos() {
         return true;
     }
 }
+
