@@ -8,11 +8,11 @@ const loadIcon = document.querySelector("#spinner");
 const copyIcon = document.querySelector(".copyBtn");
 const shareBtn = document.querySelector(".shareBtn");
 const botoesResponse = document.querySelector(".responseBtn");
-const name = document.getElementById("name").value;
-const persona = document.getElementById("persona").value;
-const objetivo = document.getElementById("objetivo").value;
-const estadoEmocional = document.getElementById("estadoEmocional").value;
-const areaInteresse = document.getElementById("areaInteresse").value;
+const name = document.getElementById("name");
+const persona = document.getElementById("persona");
+const objetivo = document.getElementById("objetivo");
+const estadoEmocional = document.getElementById("estadoEmocional");
+const areaInteresse = document.getElementById("areaInteresse");
 loadConfig();
 
 shareBtn.addEventListener("click", (e) => {
@@ -89,10 +89,10 @@ function montarPrompt() {
     if (persona === "Groot") {
         prompt = 'o que o Groot diria?';
     } else {
-        prompt = `Escreva uma frase motivacional sobre ${areaInteresse}, fale como se voce fosse o ${persona}. 
+        prompt = `Escreva uma frase motivacional sobre ${areaInteresse.value}, fale como se voce fosse o ${persona.value}. 
                     leve em consideração estas informações: 
-                    Meu nome é ${name}.
-                    Meu atual objetivo é ${objetivo} e hoje me sinto ${estadoEmocional}.`;
+                    Meu nome é ${name.value}.
+                    Meu atual objetivo é ${objetivo.value} e hoje me sinto ${estadoEmocional.value}.`;
     
     }
 
