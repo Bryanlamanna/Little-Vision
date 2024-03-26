@@ -86,7 +86,7 @@ function montarPrompt() {
     
     let prompt
 
-    if (persona === "Groot") {
+    if (persona.value === "Groot") {
         prompt = 'o que o Groot diria?';
     } else {
         prompt = `Escreva uma frase motivacional sobre ${areaInteresse.value}, fale como se voce fosse o ${persona.value}. 
