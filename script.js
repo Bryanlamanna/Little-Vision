@@ -67,6 +67,7 @@ async function animar() {
         resultadoText.innerHTML = text;
         loadIcon.style.display = "none";
         botoesResponse.style.display = "flex";
+        document.querySelector(".container").style.height = 'auto';
         scrollToBottom();
     } catch (error) {
         console.log(error);

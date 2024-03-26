@@ -12,39 +12,42 @@
 </head>
 <body>
    
-    <div class="container text-black">
-       
 
+    <div class="container">
+        
     <form class="form" action="#">
-        <h2 style="font-size: 2em;">Se abre ai!</h2>
+        <img src="assets/pngimg.com - yoda_PNG15.png" alt="imagem gerada pelo modelo Dall-e 2" class="bear">
+        <h2 style="font-size: 1.5em;">Como voce se sente hoje?</h2>
         <label for="name">Nome:</label>
-        <input type="text" name="name" id="name" class="text-black" >
+        <input type="text" name="name" id="name">
         <label for="objetivo">Objetivo:</label>
-        <input type="text" name="objetivo" id="objetivo" maxlength="20" class="text-black">
+        <input type="text" name="objetivo" id="objetivo" maxlength="20">
         <label for="areaInteresse">Area de interesse:</label>
-        <select class="text-black" name="areaInteresse" id="areaInteresse">
+        <select name="areaInteresse" id="areaInteresse">
+            <option value="nada">Nenhuma</option>
             <option value="carreira">Carreira</option>
             <option value="relacionamento">Relacionamento</option>
             <option value="saude">Saúde</option>
             <option value="espiritualidade">Espiritualidade</option>
         </select>
         <label for="estadoEmocional">Estado Emocional:</label>
-        <select class="text-black" id="estadoEmocional" name="estadoEmocional">
+        <select id="estadoEmocional" name="estadoEmocional">
+            <option value="neutro">Neutro</option>
             <option value="feliz">Feliz</option>
             <option value="triste">Triste</option>
             <option value="ansioso">Ansioso</option>
             <option value="em um dia difícil">Em um dia difícil</option>
         </select>
         <label for="persona">Amigo:</label>
-        <select class="text-black" name="persona" id="persona">
+        <select name="persona" id="persona">
+            <option value="voce mesmo">Nenhum</option>
             <option value="Groot">Groot</option>
+            <option value="Naruto Uzumaki">Naruto</option>
             <option value="Homem-Aranha">Homem Aranha</option>
-            <option value="Malcom-X">Malcom X</option>
             <option value="HomerSimpson">Homer Simpson</option>
             <option value="Mestre-Yoda">Mestre Yoda</option>
-            <option value="Gandhi">Mahatma Gandhi</option>
         </select>
-        <button class="btn btn-primary animarBtn mt-4">Habla!</button>
+        <button class="btn btn-primary animarBtn mt-4 font-bold">Habla!</button>
     </form>
 
    
@@ -53,10 +56,10 @@
         <span id="responseText"></span>
         <i class="fa-solid fa-spinner" id="spinner"></i>
     </p>
-    <div class="responseBtn" style="display: flex; gap: 1em; display: none;">
+    <div class="responseBtn font-bold mb-4" style="display: flex; gap: 1em; display: none;">
         <button class="btn btn-primary shareBtn mt-4">
             <i class="fa-solid fa-share-nodes"></i>
-            Share
+            Compartilhar
         </button>
         <button class="btn btn-primary copyBtn mt-4" id="copyBtn">
             <i class="fa-regular fa-copy"></i>

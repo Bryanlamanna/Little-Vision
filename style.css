@@ -1,9 +1,10 @@
 
 body {
     justify-content: center;
-    background-color: #a1a1a1;
-    font-family: Arial, sans-serif;
-
+    background-color: #818181;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 4em;
+    padding-bottom: 2em ;
 }
 
 h2 {
@@ -11,7 +12,15 @@ h2 {
     text-align: center;
 }
 
+.bear {
+    animation: leftandright 10s ease-in-out infinite;
+
+    height: 6em;
+    margin: 0 auto;
+}
+
 .container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,15 +37,15 @@ h2 {
 .animarBtn:hover, .copyBtn:hover, .shareBtn:hover {
     transform: translate(-5px, -5px);    
     box-shadow: 5px 5px 0px #00000049;
-    background-color: rgb(147, 221, 73);
-    color: black;
+    background-color: #dd1153;
+    color: rgb(255, 255, 255);
 }
 
 .form {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.293), 0 6px 20px 0 rgba(0, 0, 0, 0.276);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
     color: #f5f5f5;
     border-radius: 8px;
-    background-color: rgb(63, 63, 63);
+    background-color: #19234bd2;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -49,9 +58,18 @@ h2 {
 button {
     margin-top: 10px;
     max-width: 200px;
+    background-color: #f99c01;
+}
+
+.btn {
+    
+    background-color: #f99c01;
+    color: #19234b;
 }
 
 input {
+    background-color: #ffffff37;
+    color: white;
     text-align: center;
     border-radius: 8px;
     outline: none;
@@ -66,12 +84,23 @@ input[type="text"] {
 }
 
 select {
+    color: white;
     padding: 5px;
     margin: 0 auto;
     max-width: 80%;
     border-radius: 8px;
     outline: none;
     border: none;
+}
+
+label {
+    font-weight: 500;
+}
+
+select option {
+    font-weight: 600;
+    color: #19234b;
+    background-color: #f99c01;
 }
 
 input[type="number"] {
@@ -81,12 +110,12 @@ input[type="number"] {
 }
 
 #responseDiv {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
     display: none;
     border-radius: 8px;
     padding: 10px;
     color: #f5f5f5;
-    background-color: rgb(63, 63, 63);
+    background-color: #19234bd2;
     margin-top: 1em;
     text-align: center;
     max-width: 500px;
@@ -111,6 +140,26 @@ input[type="number"] {
     }
 }
 
+@keyframes leftandright {
+    
+    0% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(100px);
+    }
+
+    66% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
 .buttons {
     display: none;
     visibility: hidden;
@@ -130,7 +179,7 @@ input[type="number"] {
 
 
 .copyIcon:hover {
-    color: rgb(147, 221, 73);
+    color: #ffffff37;
 }
 
 
@@ -141,6 +190,11 @@ input[type="number"] {
 
 .image {
     height: 100%;
+}
+
+#estadoEmocional, #areaInteresse, #persona {
+    background-color: #ffffff37;
+    padding: 3px;
 }
 
 @media screen and (max-width: 600px) {
