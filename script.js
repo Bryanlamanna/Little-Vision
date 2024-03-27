@@ -43,7 +43,6 @@ shareBtn.addEventListener("click", (e) => {
     }
 })
 
-
 copyIcon.addEventListener("click", (e) => {
     navigator.clipboard.writeText(resultadoText.innerHTML);
     copySpan.style.visibility = "visible";
