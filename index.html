@@ -16,7 +16,11 @@
     <div class="container">
         
     <form class="form" action="#">
-        <img src="assets/bear.png" alt="imagem gerada pelo modelo Dall-e 2" class="bear">
+       <div class="images">
+            <img src="assets/bear.png" alt="imagem gerada pelo modelo Dall-e 2" class="bear">
+            <img src="assets/typebear.png" alt="" class="typebear">
+       </div>
+        
         <h2 style="font-size: 1.5em;">Como voce se sente hoje?</h2>
         <label for="name">Nome:</label>
         <input type="text" name="name" id="name">
@@ -47,7 +51,7 @@
             <option value="HomerSimpson">Homer Simpson</option>
             <option value="Mestre-Yoda">Mestre Yoda</option>
         </select>
-        <button class="btn btn-primary animarBtn mt-4 font-bold">Habla!</button>
+        <button class="btn btn-primary animarBtn mt-4 font-bold">Enviar</button>
     </form>
 
    
@@ -56,17 +60,20 @@
         <span id="responseText"></span>
         <i class="fa-solid fa-spinner" id="spinner"></i>
     </p>
-    <div class="responseBtn font-bold mb-4" style="display: flex; gap: 1em; display: none;">
-        <button class="btn btn-primary shareBtn mt-4">
+    <div class="responseBtn mb-4" style="display: flex; gap: 1em; display: none;">
+        <button class="btn btn-primary font-bold shareBtn mt-4">
             <i class="fa-solid fa-share-nodes"></i>
             Compartilhar
         </button>
-        <button class="btn btn-primary copyBtn mt-4" id="copyBtn">
+        <button class="btn btn-primary copyBtn mt-4 font-bold" id="copyBtn">
             <i class="fa-regular fa-copy"></i>
             Copiar
         </button>
     </div>
-
+    <button class="btn btn-primary mt-4 font-bold" id="copySpan">
+            Copiado para a area de transferencia!
+            <i class="fa-solid fa-circle-check"></i>
+    </button>
     </div>
     
     <script type="importmap">

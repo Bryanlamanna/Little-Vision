@@ -1,7 +1,7 @@
 
 body {
     justify-content: center;
-    background-color: #818181;
+    background: radial-gradient(circle,#088d99, #0a49a4);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-bottom: 4em;
     padding-bottom: 2em ;
@@ -12,11 +12,33 @@ h2 {
     text-align: center;
 }
 
-.bear {
-    animation: leftandright 10s ease-in-out infinite;
+.images {
+    display: flex;
+}
 
+.bear {
+    transition: .5s;
+    animation: leftandright 10s ease-in-out;
+    z-index: 2;
     height: 6em;
     margin: 0 auto;
+}
+
+.bear:hover {
+    filter: drop-shadow(0 0 1rem #ffffffca);
+    transform: scale(1.2);
+}
+
+
+
+.typebear {
+    opacity: 0;
+    animation: rightandleft 8s ease-in-out;
+    z-index: 1;
+    transform: translate(59px, 33px);
+    position: absolute;
+    width: 8em;
+    height: auto;
 }
 
 .container {
@@ -34,10 +56,14 @@ h2 {
 
 }   
 
-.animarBtn:hover, .copyBtn:hover, .shareBtn:hover {
+.responseBtn button {
+    box-shadow: 5px 5px 15px #00000049;
+}
+
+.animarBtn:hover, .copyBtn:hover, .shareBtn:hover, #copySpan:hover {
     transform: translate(-5px, -5px);    
     box-shadow: 5px 5px 0px #00000049;
-    background-color: #dd1153;
+    background-color: #8bc30a;
     color: rgb(255, 255, 255);
 }
 
@@ -45,7 +71,7 @@ h2 {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
     color: #f5f5f5;
     border-radius: 8px;
-    background-color: #19234bd2;
+    background-color: #19234bb6;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -58,12 +84,12 @@ h2 {
 button {
     margin-top: 10px;
     max-width: 200px;
-    background-color: #f99c01;
+    background-color: #fcd228;
 }
 
 .btn {
     border: none;
-    background-color: #f99c01;
+    background-color: #fcd228;
     color: #19234b;
 }
 
@@ -100,7 +126,7 @@ label {
 select option {
     font-weight: 600;
     color: #19234b;
-    background-color: #f99c01;
+    background-color: #fcd228;
 }
 
 input[type="number"] {
@@ -143,44 +169,38 @@ input[type="number"] {
 @keyframes leftandright {
     
     0% {
-        transform: translateX(0);
+        transform: translateX(0px);
+
     }
 
-    33% {
-        transform: translateX(80px);
-    }
+   33% {
+        transform: translateX(-76px);
 
-    66% {
-        transform: translateX(-80px);
     }
-
-    100% {
-        transform: translateX(0);
-    }
-
 }
 
-.buttons {
-    display: none;
+
+@keyframes rightandleft {
+    
+  20% {
+      opacity: 0;
+  }
+   30% {
+      opacity: 1;    
+    }
+    95% {
+        opacity: 1;
+    }
+}
+
+#copySpan {
     visibility: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: .5em;
-}
-
-.copyIcon{
-    display: none;
-    cursor: pointer;
+    opacity: 0;
     transition: .3s;
-    position: relative;
-    right: 1%;
+    position: fixed;
+    bottom: 5%;
 }
 
-
-.copyIcon:hover {
-    color: #ffffff37;
-}
 
 
 .buttons button {

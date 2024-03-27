@@ -13,6 +13,7 @@ const persona = document.getElementById("persona");
 const objetivo = document.getElementById("objetivo");
 const estadoEmocional = document.getElementById("estadoEmocional");
 const areaInteresse = document.getElementById("areaInteresse");
+const copySpan = document.querySelector("#copySpan");
 loadConfig();
 
 shareBtn.addEventListener("click", (e) => {
@@ -34,6 +35,12 @@ shareBtn.addEventListener("click", (e) => {
 
 copyIcon.addEventListener("click", (e) => {
     navigator.clipboard.writeText(resultadoText.innerHTML);
+    copySpan.style.visibility = "visible";
+    copySpan.style.opacity = "1";
+    setTimeout(() => {
+        copySpan.style.visibility = "hidden";
+        copySpan.style.opacity = "0";
+    }, 3000)
 })
 
 async function loadConfig() {
