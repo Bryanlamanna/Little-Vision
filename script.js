@@ -8,13 +8,24 @@ const loadIcon = document.querySelector("#spinner");
 const copyIcon = document.querySelector(".copyBtn");
 const shareBtn = document.querySelector(".shareBtn");
 const botoesResponse = document.querySelector(".responseBtn");
-const name = document.getElementById("name");
 const persona = document.getElementById("persona");
 const objetivo = document.getElementById("objetivo");
 const estadoEmocional = document.getElementById("estadoEmocional");
 const areaInteresse = document.getElementById("areaInteresse");
 const copySpan = document.querySelector("#copySpan");
+var name = localStorage.getItem('name');
 loadConfig();
+getNameOnCache();
+
+
+function getNameOnCache() {
+    if (name === '' || name === null || name === undefined) {
+        name = prompt('Qual o seu nome?');    
+        localStorage.setItem('name', name);
+    } else {
+        return;
+    }
+}
 
 shareBtn.addEventListener("click", (e) => {
     if (navigator.share) {
@@ -99,21 +110,19 @@ function montarPrompt() {
     } else {
         prompt = `Escreva uma frase motivacional sobre ${areaInteresse.value}, fale como se voce fosse o ${persona.value}. 
                     leve em consideração estas informações: 
-                    Meu nome é ${name.value}.
+                    Meu nome é ${name}.
                     Meu atual objetivo é ${objetivo.value} e hoje me sinto ${estadoEmocional.value}.`;
-    
     }
-
+        console.log(prompt);
      return prompt;         
 }
 
 function checarCampos() {
-    const name = document.getElementById("name").value;
     const objetivo = document.getElementById("objetivo").value;
     const estadoEmocional = document.getElementById("estadoEmocional").value;
     const areaInteresse = document.getElementById("areaInteresse").value;
 
-    if (name === "" || objetivo === "" || estadoEmocional === "" || areaInteresse === "") {
+    if (objetivo === "" || estadoEmocional === "" || areaInteresse === "") {
         return false;
     } else {
         return true;
