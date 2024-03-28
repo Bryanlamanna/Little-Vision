@@ -1,0 +1,18 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "littlevision.netlify",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "littlevision.netlify",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/bear.png",
+      "type": "image/png",
+      "sizes": "608x608"
+    }
+  ]
+}
