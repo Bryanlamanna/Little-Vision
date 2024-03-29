@@ -4,9 +4,9 @@
   "display": "standalone",
   "name": "Little Vision",
   "orientation": "any",
-  "scope": "https://littlevision.netlify.app/",
+  "scope": "https://littlevision.netlify.app",
   "short_name": "Little",
-  "start_url": "https://littlevision.netlify.app/",
+  "start_url": "https://littlevision.netlify.app",
   "theme_color": "#fdc52c",
   "icons": [
     {
