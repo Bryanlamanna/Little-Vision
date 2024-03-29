@@ -8,15 +8,37 @@ const loadIcon = document.querySelector("#spinner");
 const copyIcon = document.querySelector(".copyBtn");
 const shareBtn = document.querySelector(".shareBtn");
 const botoesResponse = document.querySelector(".responseBtn");
-const persona = document.getElementById("persona");
+const persona = document.getElementById("personaSelect");
 const objetivo = document.getElementById("objetivo");
 const estadoEmocional = document.getElementById("estadoEmocional");
 const areaInteresse = document.getElementById("areaInteresse");
 const copySpan = document.querySelector("#copySpan");
+const interesses = document.querySelectorAll(".interesse");
 var name = localStorage.getItem('name');
+var dropDown = [false, false, false];
 loadConfig();
 getNameOnCache();
 
+console.log(interesses);
+
+areaInteresse.addEventListener("click", (e) => {
+    
+    if (dropDown[0]) {
+        interesses.forEach((interesse) => {
+            interesse.style.opacity = 0;
+            interesse.style.pointerEvents = 'none';
+            interesse.style.display = 'none';
+        })
+        dropDown[0] = false;
+    } else {
+        interesses.forEach((interesse) => {
+            interesse.style.display = 'block';
+            interesse.style.opacity = 1;
+            interesse.style.pointerEvents = 'auto';
+        })
+        dropDown[0] = true;
+        }
+})
 
 function getNameOnCache() {
     if (name === '' || name === null || name === undefined) {

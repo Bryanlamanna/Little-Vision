@@ -4,11 +4,11 @@ body {
     background: radial-gradient(circle,#088d99, #0a49a4);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-bottom: 4em;
-    padding-bottom: 2em ;
 }
 
-h2 {
-    font-size: 4em;
+
+.title {
+    font-size: 1.3em;
     text-align: center;
 }
 
@@ -104,36 +104,17 @@ input {
 }
 
 input[type="text"] {
-    padding: 3px;
+    padding: 6px;
     margin: 0 auto;
     max-width: 90%;
 }
 
-select {
-    color: white;
-    padding: 5px;
-    margin: 0 auto;
-    max-width: 80%;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-}
+
 
 label {
     font-weight: 500;
 }
 
-select option {
-    font-weight: 600;
-    color: #19234b;
-    background-color: #fcd228;
-}
-
-input[type="number"] {
-    
-    margin: 0 auto;
-    max-width: 90%;
-}
 
 #responseDiv {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
@@ -146,9 +127,6 @@ input[type="number"] {
     text-align: center;
     max-width: 500px;
 }
-
-
-
 
 #spinner {
     animation: spin 1s linear infinite;
@@ -201,8 +179,6 @@ input[type="number"] {
     bottom: 5%;
 }
 
-
-
 .buttons button {
     width: 100px;
     height: 50px;
@@ -212,10 +188,33 @@ input[type="number"] {
     height: 100%;
 }
 
-#estadoEmocional, #areaInteresse, #persona {
-    background-color: #ffffff37;
-    padding: 3px;
+.selectedPersona, .selectedEmotion, .selectedInteresse  {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 8px;
+    display: flex;
+    background-color: #b9b9b937;
+    justify-content: space-between;
 }
+
+ul {
+    list-style: none;
+    
+    width: 90%;
+}
+
+.interesse, .emocao, .persona {
+    width: 100%;
+    background-color: #63636337;
+    display: none;
+    transition: height .3s;
+    opacity: 0;
+    text-align: left;
+    padding: 7px;
+}
+
 
 @media screen and (max-width: 600px) {
 
