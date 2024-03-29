@@ -18,6 +18,9 @@
   "id": "LittleApp",
   "description": "Motivational bites!",
   "lang": "pt",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+},
   "display_override": [
     "fullscreen",
     "window-controls-overlay"
