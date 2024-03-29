@@ -27,30 +27,34 @@
         <label for="objetivo">Objetivo:</label>
         <input type="text" name="objetivo" id="objetivo" maxlength="20">
         <label for="areaInteresse">Area de interesse:</label>
-        <ul name="areaInteresse" id="areaInteresse">
-            <li value="nada" class="selectedInteresse">
-                Nenhuma
-                <i class="fa-solid fa-chevron-down"></i>
-            </li>
-            <li value="carreira" class="interesse">
-                Carreira
-            </li>
-            <li value="relacionamento" class="interesse">
-                Relacionamento
-            </li>
-            <li value="saude" class="interesse">
-                Saúde
-            </li>
-            <li value="espiritualidade" class="interesse">
-                Espiritualidade
-            </li>
+        <ul name="areaInteresse" id="areaInteresse">           
+                <li value="nada" class="selectedInteresse">
+                    <span class="selectedInteresseText">Nenhum</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </li>
+            <div class="interessesDiv"> 
+                <li value="carreira" class="interesse">
+                    Carreira
+                </li>
+                <li value="relacionamento" class="interesse">
+                    Relacionamento
+                </li>
+                <li value="saude" class="interesse">
+                    Saúde
+                </li>
+                
+                <li value="espiritualidade" class="interesse">
+                    Espiritualidade
+                </li>
+            </div>
         </ul>
         <label for="estadoEmocional">Estado Emocional:</label>
         <ul id="estadoEmocional" name="estadoEmocional">
             <li value="neutro" class="selectedEmotion">
-                Neutro
+                <span class="selectedEmotionText">Neutro</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </li>
+        <div class="emocoesDiv">
             <li value="feliz" class="emocao">
                 Feliz
             </li>
@@ -63,13 +67,15 @@
             <li value="em um dia difícil" class="emocao">
                 Em um dia difícil
             </li>
+        </div>    
         </ul>
         <label for="persona">Amigo:</label>
         <ul name="persona" id="personaSelect">
             <li value="voce mesmo" class="selectedPersona">
-                Nenhum
+                <span class="selectedPersonaText">Nenhum</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </li>
+        <div class="personasDiv">    
             <li value="Groot" class="persona">
                 Groot
             </li>    
@@ -85,6 +91,7 @@
             <li value="Mestre-Yoda" class="persona">
                 Mestre Yoda
             </li>
+        </div>    
         </ul>
         <button class="btn btn-primary animarBtn mt-4 font-bold">Enviar</button>
     </form>

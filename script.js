@@ -14,30 +14,88 @@ const estadoEmocional = document.getElementById("estadoEmocional");
 const areaInteresse = document.getElementById("areaInteresse");
 const copySpan = document.querySelector("#copySpan");
 const interesses = document.querySelectorAll(".interesse");
+const emocoes = document.querySelectorAll(".emocao");
+const perconas = document.querySelectorAll(".persona");
+const interesseDiv = document.querySelector(".interessesDiv");
+const emocoesDiv = document.querySelector(".emocoesDiv");
+const personasDiv = document.querySelector(".personasDiv");
+const chevron = document.querySelectorAll("li i");
 var name = localStorage.getItem('name');
 var dropDown = [false, false, false];
 loadConfig();
 getNameOnCache();
 
-console.log(interesses);
+
+interesses.forEach((interesse) => {
+    interesse.addEventListener("click", (e) => {
+        document.querySelector(".selectedInteresseText").innerHTML = interesse.innerHTML;
+    })
+})
+
+emocoes.forEach((emocao) => {
+    emocao.addEventListener("click", (e) => {
+        document.querySelector(".selectedEmotionText").innerHTML = emocao.innerHTML;
+    })
+})
+
+perconas.forEach((persona) => {
+    persona.addEventListener("click", (e) => {
+        document.querySelector(".selectedPersonaText").innerHTML = persona.innerHTML;
+    })
+})
+
+
+persona.addEventListener("click", (e) => {
+
+    if (dropDown[2]=== false) {
+        personasDiv.style.height = 'fit-content';
+        interesseDiv.style.height = '0%';
+        emocoesDiv.style.height = '0%';
+        chevron[2].style.transform = 'rotate(180deg)';
+        dropDown[1] = false;
+        dropDown[0] = false;
+        dropDown[2] = true;
+    } else {
+        chevron[2].style.transform = 'rotate(0deg)';
+        personasDiv.style.height = '0%';
+        dropDown[2] = false;    
+    }
+
+})
+
+estadoEmocional.addEventListener("click", (e) => {
+    
+    if (dropDown[1]=== false) {
+        emocoesDiv.style.height = 'fit-content';
+        interesseDiv.style.height = '0%';
+        personasDiv.style.height = '0%';
+        chevron[1].style.transform = 'rotate(180deg)';
+        dropDown[0] = false;
+        dropDown[2] = false;
+        dropDown[1] = true;
+    } else {
+        chevron[1].style.transform = 'rotate(0deg)';
+        emocoesDiv.style.height = '0%';
+        dropDown[1] = false;
+    }
+})
 
 areaInteresse.addEventListener("click", (e) => {
     
-    if (dropDown[0]) {
-        interesses.forEach((interesse) => {
-            interesse.style.opacity = 0;
-            interesse.style.pointerEvents = 'none';
-            interesse.style.display = 'none';
-        })
-        dropDown[0] = false;
-    } else {
-        interesses.forEach((interesse) => {
-            interesse.style.display = 'block';
-            interesse.style.opacity = 1;
-            interesse.style.pointerEvents = 'auto';
-        })
+    if (dropDown[0]=== false) {
+        interesseDiv.style.height = 'fit-content';
+        personasDiv.style.height = '0%';
+        emocoesDiv.style.height = '0%';
+        chevron[0].style.transform = 'rotate(180deg)';
+        dropDown[1] = false;
+        dropDown[2] = false;
         dropDown[0] = true;
-        }
+    } else {
+        chevron[0].style.transform = 'rotate(0deg)';
+        interesseDiv.style.height = '0%';
+        dropDown[0] = false;
+    }
+
 })
 
 function getNameOnCache() {

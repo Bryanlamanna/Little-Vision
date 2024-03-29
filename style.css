@@ -133,6 +133,20 @@ label {
 
 }
 
+
+.interessesDiv, .emocoesDiv, .personasDiv {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
+    color: #19234b;
+    font-weight: bold;
+    position: absolute;
+    height: 0;
+    margin: 0 auto;
+    width: 62%;
+    overflow: hidden;
+    transition: .2s;
+    display: block;
+}
+
 @keyframes spin {
     
     from {
@@ -189,14 +203,23 @@ label {
 }
 
 .selectedPersona, .selectedEmotion, .selectedInteresse  {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
     padding-top: 7px;
     padding-bottom: 7px;
     border-radius: 8px;
     display: flex;
     background-color: #b9b9b937;
     justify-content: space-between;
+}
+
+li i {
+    transition: .3s;
+    margin: 5px;
+}
+
+li {
+    width: 100%;
 }
 
 ul {
@@ -207,14 +230,21 @@ ul {
 
 .interesse, .emocao, .persona {
     width: 100%;
-    background-color: #63636337;
-    display: none;
+    background-color: #c3a21f;
     transition: height .3s;
-    opacity: 0;
     text-align: left;
     padding: 7px;
 }
 
+.interesse:first-child, .emocao:first-child, .persona:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.interesse:last-child, .emocao:last-child, .persona:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
 
 @media screen and (max-width: 600px) {
 
