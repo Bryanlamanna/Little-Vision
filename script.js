@@ -187,10 +187,11 @@ function montarPrompt() {
     if (persona.value === "Groot") {
         prompt = 'o que o Groot diria?';
     } else {
-        prompt = `Escreva uma frase motivacional sobre ${areaInteresse.value}, fale como se voce fosse o ${persona.value}. 
-                    leve em consideração estas informações: 
-                    Meu nome é ${name}.
-                    Meu atual objetivo é ${objetivo.value} e hoje me sinto ${estadoEmocional.value}.`;
+        prompt = `Meu nome é ${name}.
+                Escreva uma frase motivacional sobre ${document.querySelector(".selectedInteresseText").innerHTML}, fale como se voce fosse o ${document.querySelector(".selectedPersonaText").innerHTML}. 
+                leve em consideração estas informações: 
+                
+                Meu atual objetivo é ${objetivo.value} e hoje me sinto ${document.querySelector(".selectedEmotionText").innerHTML}.`;
     }
         console.log(prompt);
      return prompt;         

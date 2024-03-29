@@ -141,7 +141,7 @@ label {
     position: absolute;
     height: 0;
     margin: 0 auto;
-    width: 62%;
+    width: auto;
     overflow: hidden;
     transition: .2s;
     display: block;
@@ -215,6 +215,7 @@ label {
 
 li i {
     transition: .3s;
+    z-index: 2;
     margin: 5px;
 }
 
@@ -225,11 +226,12 @@ li {
 ul {
     list-style: none;
     
-    width: 90%;
+    width: 9em;
 }
 
 .interesse, .emocao, .persona {
-    width: 100%;
+    z-index: 3;
+    width: 9em;
     background-color: #c3a21f;
     transition: height .3s;
     text-align: left;
@@ -272,6 +274,19 @@ ul {
     #estadoEmocional, #areaInteresse, #persona {
     
         padding: 3px;
+    }
+
+    .interessesDiv, .emocoesDiv, .personasDiv {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.549);
+        color: #19234b;
+        font-weight: bold;
+        position: absolute;
+        height: 0;
+        margin: 0 auto;
+        width: 62%;
+        overflow: hidden;
+        transition: .2s;
+        display: block;
     }
     
 
