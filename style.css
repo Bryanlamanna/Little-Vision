@@ -226,12 +226,12 @@ li {
 ul {
     list-style: none;
     
-    width: 9em;
+    width: 11em;
 }
 
 .interesse, .emocao, .persona {
     z-index: 3;
-    width: 9em;
+    width: 11em;
     background-color: #c3a21f;
     transition: height .3s;
     text-align: left;
@@ -258,15 +258,7 @@ ul {
         width: 90%;
     }
 
-    select {
-        padding: 5px;
-        margin: 0 auto;
-        max-width: 90%;
-        border-radius: 8px;
-        outline: none;
-        border: none;
-    }
-
+  
     #responseDiv {            
         max-width: 90%;
     }
@@ -283,7 +275,7 @@ ul {
         position: absolute;
         height: 0;
         margin: 0 auto;
-        width: 62%;
+        width:11em;
         overflow: hidden;
         transition: .2s;
         display: block;
