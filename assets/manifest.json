@@ -1,0 +1,31 @@
+{
+  "background_color": "#086a85",
+  "dir": "ltr",
+  "display": "minimal-ui",
+  "name": "Little Vision",
+  "orientation": "portrait",
+  "scope": "https://littlevision.netlify.app",
+  "short_name": "Little",
+  "start_url": "https://littlevision.netlify.app",
+  "theme_color": "#fdc52c",
+  "icons": [
+    {
+      "src": "assets/bear.png",
+      "type": "image/png",
+      "sizes": "608x608"
+    }
+  ],
+  "id": "LittleApp",
+  "description": "Motivational bites!",
+  "lang": "pt",
+  "launch_handler": {
+    "client_mode": [
+      "navigate-existing",
+      "auto"
+    ]
+  },
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay"
+  ]
+}
