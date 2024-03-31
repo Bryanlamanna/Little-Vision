@@ -26,7 +26,11 @@ loadConfig();
 getNameOnCache();
 
 
-
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        animarBtn.click();
+    }
+})
 
 interesses.forEach((interesse) => {
     interesse.addEventListener("click", (e) => {
