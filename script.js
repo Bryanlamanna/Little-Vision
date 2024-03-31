@@ -26,6 +26,8 @@ loadConfig();
 getNameOnCache();
 
 
+
+
 interesses.forEach((interesse) => {
     interesse.addEventListener("click", (e) => {
         document.querySelector(".selectedInteresseText").innerHTML = interesse.innerHTML;
@@ -52,6 +54,8 @@ persona.addEventListener("click", (e) => {
         interesseDiv.style.height = '0%';
         emocoesDiv.style.height = '0%';
         chevron[2].style.transform = 'rotate(180deg)';
+        chevron[1].style.transform = 'rotate(0deg)';
+        chevron[0].style.transform = 'rotate(0deg)';
         dropDown[1] = false;
         dropDown[0] = false;
         dropDown[2] = true;
@@ -70,6 +74,8 @@ estadoEmocional.addEventListener("click", (e) => {
         interesseDiv.style.height = '0%';
         personasDiv.style.height = '0%';
         chevron[1].style.transform = 'rotate(180deg)';
+        chevron[0].style.transform = 'rotate(0deg)';
+        chevron[2].style.transform = 'rotate(0deg)';
         dropDown[0] = false;
         dropDown[2] = false;
         dropDown[1] = true;
@@ -87,6 +93,8 @@ areaInteresse.addEventListener("click", (e) => {
         personasDiv.style.height = '0%';
         emocoesDiv.style.height = '0%';
         chevron[0].style.transform = 'rotate(180deg)';
+        chevron[1].style.transform = 'rotate(0deg)';
+        chevron[2].style.transform = 'rotate(0deg)';
         dropDown[1] = false;
         dropDown[2] = false;
         dropDown[0] = true;
