@@ -46,7 +46,7 @@ emocoes.forEach((emocao) => {
 
 perconas.forEach((persona) => {
     persona.addEventListener("click", (e) => {
-        document.querySelector(".selectedPersonaText").innerHTML = persona.innerHTML;
+        document.querySelector(".selectedPersonaText").textContent = persona.textContent;
     })
 })
 
@@ -196,7 +196,11 @@ function montarPrompt() {
     
     let prompt
 
-    if (persona.value === "Groot") {
+    let persona = document.querySelector(".selectedPersonaText");
+    let groot = document.querySelectorAll(".persona");
+
+
+    if (persona.textContent === groot[0].textContent) {
         prompt = 'o que o Groot diria?';
     } else {
         prompt = `Meu nome é ${name}.
