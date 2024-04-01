@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/bear.png">
+    <link rel="manifest" href="/manifest.json">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -12,42 +14,86 @@
 </head>
 <body>
    
-
+    <p class="text-white">Desenvolvido por <a style="color: #fcd228;" class="underline" href="https://bryanlamanna.github.io/Portfolio" target="_blank">Bryan Lamanna</a></p>
     <div class="container">
         
     <form class="form" action="#">
-        <img src="assets/_744bfd8f-1422-48ca-9f40-51fe0de19b78-removebg-preview.png" alt="imagem gerada pelo modelo Dall-e 2" class="bear">
-        <h2 style="font-size: 1.5em;">Como voce se sente hoje?</h2>
-        <label for="name">Nome:</label>
-        <input type="text" name="name" id="name">
+       <div class="images">
+            <img src="assets/bear.png" alt="imagem gerada pelo modelo Dall-e 2" class="bear">
+            <img src="assets/typebear.png" alt="" class="typebear">
+       </div>
+        
+        <h2 class="title">Como voce se sente hoje?</h2>
         <label for="objetivo">Objetivo:</label>
-        <input type="text" name="objetivo" id="objetivo" maxlength="20">
+        <input type="text" name="objetivo" id="objetivo" maxlength="40">
         <label for="areaInteresse">Area de interesse:</label>
-        <select name="areaInteresse" id="areaInteresse">
-            <option value="nada">Nenhuma</option>
-            <option value="carreira">Carreira</option>
-            <option value="relacionamento">Relacionamento</option>
-            <option value="saude">Saúde</option>
-            <option value="espiritualidade">Espiritualidade</option>
-        </select>
+        <ul name="areaInteresse" id="areaInteresse">           
+                <li value="nada" class="selectedInteresse">
+                    <span class="selectedInteresseText">Nenhum</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </li>
+            <div class="interessesDiv"> 
+                <li value="carreira" class="interesse">
+                    Carreira
+                </li>
+                <li value="relacionamento" class="interesse">
+                    Relacionamento
+                </li>
+                <li value="saude" class="interesse">
+                    Saúde
+                </li>
+                
+                <li value="espiritualidade" class="interesse">
+                    Espiritualidade
+                </li>
+            </div>
+        </ul>
         <label for="estadoEmocional">Estado Emocional:</label>
-        <select id="estadoEmocional" name="estadoEmocional">
-            <option value="neutro">Neutro</option>
-            <option value="feliz">Feliz</option>
-            <option value="triste">Triste</option>
-            <option value="ansioso">Ansioso</option>
-            <option value="em um dia difícil">Em um dia difícil</option>
-        </select>
+        <ul id="estadoEmocional" name="estadoEmocional">
+            <li value="neutro" class="selectedEmotion">
+                <span class="selectedEmotionText">Neutro</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </li>
+        <div class="emocoesDiv">
+            <li value="feliz" class="emocao">
+                Feliz
+            </li>
+            <li value="triste" class="emocao">
+                Triste
+            </li>
+            <li value="ansioso" class="emocao">
+                Ansioso
+            </li>
+            <li value="em um dia difícil" class="emocao">
+                Em um dia difícil
+            </li>
+        </div>    
+        </ul>
         <label for="persona">Amigo:</label>
-        <select name="persona" id="persona">
-            <option value="voce mesmo">Nenhum</option>
-            <option value="Groot">Groot</option>
-            <option value="Naruto Uzumaki">Naruto</option>
-            <option value="Homem-Aranha">Homem Aranha</option>
-            <option value="HomerSimpson">Homer Simpson</option>
-            <option value="Mestre-Yoda">Mestre Yoda</option>
-        </select>
-        <button class="btn btn-primary animarBtn mt-4 font-bold">Habla!</button>
+        <ul name="persona" id="personaSelect">
+            <li value="voce mesmo" class="selectedPersona">
+                <span class="selectedPersonaText">Nenhum</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </li>
+        <div class="personasDiv">    
+            <li value="Groot" class="persona">
+                Groot
+            </li>    
+            <li value="Naruto Uzumaki" class="persona">
+                Naruto
+            </li>
+            <li value="Homem-Aranha" class="persona">
+                Homem Aranha
+            </li>
+            <li value="HomerSimpson" class="persona">
+                Homer Simpson
+            </li>
+            <li value="Mestre-Yoda" class="persona">
+                Mestre Yoda
+            </li>
+        </div>    
+        </ul>
+        <button class="btn btn-primary animarBtn mt-4 font-bold">Enviar</button>
     </form>
 
    
@@ -56,19 +102,26 @@
         <span id="responseText"></span>
         <i class="fa-solid fa-spinner" id="spinner"></i>
     </p>
-    <div class="responseBtn font-bold mb-4" style="display: flex; gap: 1em; display: none;">
-        <button class="btn btn-primary shareBtn mt-4">
+    <div class="responseBtn mb-4" style="display: flex; gap: 1em; display: none;">
+        <button class="btn btn-primary font-bold shareBtn mt-4">
             <i class="fa-solid fa-share-nodes"></i>
             Compartilhar
         </button>
-        <button class="btn btn-primary copyBtn mt-4" id="copyBtn">
+        <button class="btn btn-primary copyBtn mt-4 font-bold" id="copyBtn">
             <i class="fa-regular fa-copy"></i>
             Copiar
         </button>
     </div>
-
+    <button class="btn btn-primary mt-4 font-bold" id="copySpan">
+            Copiado para a area de transferencia!
+            <i class="fa-solid fa-circle-check"></i>
+    </button>
     </div>
     
+    <script src="serviceworker.js"></script>
+
+  
+
     <script type="importmap">
         {
           "imports": {
